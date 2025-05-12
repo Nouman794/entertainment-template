@@ -8,6 +8,7 @@ $f3 = \Base::instance();
 
 $f3->route('GET /', function () {
     echo 'Hello from Fat-Free Framework!';
+    echo 'Test push without password!';
 });
 
 $f3->run();
