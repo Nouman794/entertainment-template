@@ -2,11 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Movies</title>
 </head>
+<header>
+    <include href="ui/header.html" />
+</header>
 <body>
-<h2>Latest Movies</h2>
-<p>Here you'll find a list of the latest movies fetched via API.</p>
+
+<h2>🎬 All Movies</h2>
+<div style="display: flex; overflow-x: auto; gap: 16px; padding: 10px;">
+    <repeat group="{{ @allMovies }}" value="{{ @movie }}">
+        <div style="min-width: 200px;">
+            <img src="{{ @movie.image.medium }}" style="width: 100%" />
+            <h4>{{ @movie.name }}</h4>
+        </div>
+    </repeat>
+</div>
+
+<h2>🎬 Few Movies</h2>
+<div style="display: flex; overflow-x: auto; gap: 16px; padding: 10px;">
+    <repeat group="{{ @movies }}" value="{{ @movie }}">
+        <div style="min-width: 200px;">
+            <img src="{{ @movie.image.medium }}" style="width: 100%" />
+            <h4>{{ @movie.name }}</h4>
+        </div>
+    </repeat>
+</div>
 
 </body>
+<footer>
+    <include href="ui/footer.html" />
+</footer>
 </html>

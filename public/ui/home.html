@@ -2,10 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
 </head>
+<header>
+    <include href="ui/header.html" />
+</header>
 <body>
-<h2>Welcome to the Entertainment Platform!</h2>
-<p>Enjoy movies, series, and more.</p>
+
+<h2>🔥 Popular Movies</h2>
+<div style="display: flex; overflow-x: auto; gap: 16px; padding: 10px;">
+    <repeat group="{{ @popular }}" value="{{ @movie }}">
+        <div style="min-width: 200px;">
+            <img src="{{ @movie.image.medium }}" style="width: 100%" />
+            <h4>{{ @movie.name }}</h4>
+        </div>
+    </repeat>
+</div>
+
+<h2>🎭 Drama Movies</h2>
+<div style="display: flex; overflow-x: auto; gap: 16px; padding: 10px;">
+    <repeat group="{{ @drama }}" value="{{ @movie }}">
+        <div style="min-width: 200px;">
+            <img src="{{ @movie.image.medium }}" style="width: 100%" />
+            <h4>{{ @movie.name }}</h4>
+        </div>
+    </repeat>
+</div>
+
+<h2>😂 Comedy Movies</h2>
+<div style="display: flex; overflow-x: auto; gap: 16px; padding: 10px;">
+    <repeat group="{{ @comedy }}" value="{{ @movie }}">
+        <div style="min-width: 200px;">
+            <img src="{{ @movie.image.medium }}" style="width: 100%" />
+            <h4>{{ @movie.name }}</h4>
+        </div>
+    </repeat>
+</div>
 </body>
+<footer>
+    <include href="ui/footer.html" />
+</footer>
 </html>
