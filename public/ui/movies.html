@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Movies</title>
+    <link rel="stylesheet" href="/ui/movieStyle.css">
 </head>
 <header>
-    <include href="ui/header.html" />
+    <include href="/ui/header.html" />
 </header>
 <body>
 
 <h2>🎬 All Movies</h2>
-<div style="display: flex; overflow-x: auto; gap: 16px; padding: 10px;">
-    <repeat group="{{ @allMovies }}" value="{{ @movie }}">
-        <div style="min-width: 200px;">
-            <img src="{{ @movie.image.medium }}" style="width: 100%" />
-            <h4>{{ @movie.name }}</h4>
-        </div>
-    </repeat>
+<div class="carousel-container">
+    <div class="carousel">
+        <repeat group="{{ @allMovies }}" value="{{ @movie }}">
+            <div class="carousel-item">
+                <img src="{{ @movie.image.medium }}" />
+                <h4>{{ @movie.name }}</h4>
+            </div>
+        </repeat>
+    </div>
+    <div class="carousel-arrow left-arrow">&#10094;</div>
+    <div class="carousel-arrow right-arrow">&#10095;</div>
 </div>
 
 <h2>🎬 Few Movies</h2>
@@ -28,7 +33,7 @@
         </div>
     </repeat>
 </div>
-
+<script src="/ui/movieScripts.js"></script>
 </body>
 <footer>
     <include href="ui/footer.html" />
