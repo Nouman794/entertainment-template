@@ -6,6 +6,20 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit575b404d40681fea8cf760d2c724c7fc
 {
+    public static $prefixLengthsPsr4 = array (
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/lib/App',
+        ),
+    );
+
     public static $classMap = array (
         'Audit' => __DIR__ . '/..' . '/bcosca/fatfree-core/audit.php',
         'Auth' => __DIR__ . '/..' . '/bcosca/fatfree-core/auth.php',
@@ -55,6 +69,8 @@ class ComposerStaticInit575b404d40681fea8cf760d2c724c7fc
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit575b404d40681fea8cf760d2c724c7fc::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit575b404d40681fea8cf760d2c724c7fc::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit575b404d40681fea8cf760d2c724c7fc::$classMap;
 
         }, null, ClassLoader::class);
