@@ -15,24 +15,22 @@
 
 <check if="{{ @carousels }}">
     <div class="carousel-container">
-        <div class="carousel">
-            <repeat group="{{ @carousels }}" value="{{ @carousel }}">
-                <h2>{{ @carousel.title }}</h2>
-
+        <repeat group="{{ @carousels }}" value="{{ @carousel }}">
+            <!-- Each carousel in its own wrapper -->
+            <section class="carousel-wrapper">
+                <h2 class="carousel-title">{{ @carousel.title }}</h2>
                 <div class="carousel">
                     <repeat group="{{ @carousel.items }}" value="{{ @movie }}">
                         <div class="movie-card">
-                            <repeat group="{{ @movie.allImages }}" key="{{ @type }}" value="{{ @url }}">
-                                <p><strong>{{ @type }}:</strong></p>
-                                <img src="{{ @url }}" alt="{{ @movie.title }} - {{ @type }}">
-                            </repeat>
+                            <img src="{{ @movie.allImages.DMHE ?: array_values(@movie.allImages)[0] }}" alt="{{ @movie.title }}">
                             <p>{{ @movie.title }}</p>
                         </div>
                     </repeat>
                 </div>
-            </repeat>
-        </div>
+            </section>
+        </repeat>
 
+        <!-- Left and Right Arrow Controls (if needed) -->
         <button class="arrow left">&#10094;</button>
         <button class="arrow right">&#10095;</button>
     </div>

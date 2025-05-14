@@ -1,54 +1,52 @@
+/* General layout adjustments */
 .carousel-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    /*max-width: 1000px;*/
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure the container takes full width */
+}
+
+.carousel-wrapper {
+    width: 100%; /* Ensure each carousel takes full width */
+    margin-bottom: 20px; /* Space between carousels */
 }
 
 .carousel {
     display: flex;
-    transition: transform 0.5s ease;
-    gap: 10px;
+    overflow-x: auto; /* For horizontal scrolling if needed */
+    gap: 10px; /* Space between movie cards */
 }
 
-.carousel-item {
-    min-width: 200px;
-    flex-shrink: 0;
+.movie-card {
+    width: 200px; /* Adjust this width according to your design */
+    margin-right: 10px;
     text-align: center;
 }
 
-.carousel-item img {
-    width: 100%;
-    border-radius: 8px;
-    height: 300px;
-    object-fit: cover;
+.movie-card img {
+    width: 100%; /* Make image responsive */
+    height: auto;
 }
 
-/* Arrows */
+.carousel-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    border: none;
-    font-size: 2rem;
     padding: 10px;
     cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: 2;
-}
-
-.carousel-container:hover .arrow {
-    opacity: 1;
 }
 
 .arrow.left {
-    left: 0;
+    left: 10px;
 }
 
 .arrow.right {
-    right: 0;
+    right: 10px;
 }
