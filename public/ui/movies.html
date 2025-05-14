@@ -10,12 +10,14 @@
 <body>
 
 <h2>🎬 All Movies</h2>
-<div style="display: flex; overflow-x: auto; gap: 16px; padding: 10px;">
-    <repeat group="{{ @allMovies }}" value="{{ @movie }}">
-        <div style="min-width: 200px;">
-            <img src="{{ @movie.image.medium }}" style="width: 100%" />
-            <h4>{{ @movie.name }}</h4>
-        </div>
+<div class="movies-grid">
+    <repeat group="{{ @movies }}" value="{{ @movie }}">
+        <li>
+            <strong>{{ @movie.title }}</strong><br>
+            <check if="{{ isset(@movie.images[0].url) }}">
+                <img src="{{ @movie.images[0].url }}" style="width:200px;">
+            </check>
+        </li>
     </repeat>
 </div>
 
