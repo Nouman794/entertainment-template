@@ -68,6 +68,25 @@ class MovieController
                             $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $movie['title'])));
                             $movie['permalink'] = $slug;
                         }
+// ✅ Extract all images (jpg, png, etc.)
+                        $allImages = [];
+
+                        if (isset($movie['images']) && is_array($movie['images'])) {
+                            foreach ($movie['images'] as $img) {
+                                if (isset($img['url'])) {
+                                    $url = $img['url'];
+
+                                    // Only include if it's an image with a common extension
+                                    if (preg_match('/\.(jpg|jpeg|png|webp)$/i', $url)) {
+                                        $type = $img['type'] ?? 'unknown';
+                                        $allImages[$type] = $url;
+                                    }
+                                }
+                            }
+                        }
+
+                        $movie['allImages'] = $allImages;  // Store all images by type (like DMHE, Tile, etc.)
+//                        $movie['imageUrl'] = $image;
 
                         $items[] = $movie;
                     }
@@ -92,7 +111,9 @@ class MovieController
 
         $f3->set('carousels', $carousels);
 
-
+//        echo '<pre>';
+//        print_r($carousels[0]['items'][0]);
+//        exit;
         echo \Template::instance()->render('ui/movies.html');
     }
 

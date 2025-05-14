@@ -17,12 +17,19 @@
     <div class="carousel-container">
         <div class="carousel">
             <?php foreach (($carousels?:[]) as $carousel): ?>
-                <?php foreach (($carousel['items']?:[]) as $item): ?>
-                    <div class="carousel-item">
-                        <img src="<?= ($item['imageUrl'] ?: 'https://via.placeholder.com/200x300?text=No+Image') ?>" alt="<?= ($item['title']) ?>">
-                        <p><?= ($item['title']) ?></p>
-                    </div>
-                <?php endforeach; ?>
+                <h2><?= ($carousel['title']) ?></h2>
+
+                <div class="carousel">
+                    <?php foreach (($carousel['items']?:[]) as $movie): ?>
+                        <div class="movie-card">
+                            <?php foreach (($movie['allImages']?:[]) as $type=>$url): ?>
+                                <p><strong><?= ($type) ?>:</strong></p>
+                                <img src="<?= ($url) ?>" alt="<?= ($movie['title']) ?> - <?= ($type) ?>">
+                            <?php endforeach; ?>
+                            <p><?= ($movie['title']) ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             <?php endforeach; ?>
         </div>
 
