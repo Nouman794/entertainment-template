@@ -59,6 +59,11 @@ class MovieController
                     }
 
                     if ($isMovie) {
+                        // Add permalink if not present
+                        if (!isset($title['permalink']) && isset($title['title'])) {
+                            $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title['title'])));
+                            $title['permalink'] = $slug;
+                        }
                         $movies[] = $title;
                     }
                 }
