@@ -8,9 +8,10 @@ class MovieController
     {
         $f3->set('title', 'Movies');
 
-        $layoutUrl = 'https://lgi-dev-new-api.aws.playco.com/api/v1.2/modules/home/9c797f3612974809a6c1384575800add-lgi?origin=web-chrome&x-geo-country=IN&profileType=EV&version=2&modules=0-100';
+        $layoutUrl = 'https://lgi-dev-new-api.aws.playco.com/api/v1.2/layout/home/9c797f3612974809a6c1384575800add-lgi?origin=web-chrome&x-geo-country=IN&profileType=EV&version=2&modules=0-100';
+        $moduleUrl = 'https://lgi-dev-new-api.aws.playco.com/api/v1.2/modules/home/9c797f3612974809a6c1384575800add-lgi?origin=web-chrome&x-geo-country=IN&profileType=EV&version=2&modules=0-100';
 
-        $headers = [
+        $Headers = [
             "Authorization: Bearer spx-v1.eyJpc3MiOiI5Yzc5N2YzNjEyOTc0ODA5YTZjMTM4NDU3NTgwMGFkZC1sZ2kiLCJlbnYiOiJsZ2ktZGV2IiwiaWF0IjoxNzQ1NDE1MDczfQ.tqaiS652LVWZG5UqD1G0RverTbS1yOvhOXFi0R2VSt0",
             "client-type: website",
             "Content-Type: application/json",
@@ -23,13 +24,16 @@ class MovieController
             "x-token: SEVST3xUb3AgMjB8TGF5b3V0IG1pcnJvcmluZyB0ZXN0aW5nfExpb25zZ2F0ZSBCbG9ja2J1c3RlcnMgSGl0c3x0ZXN0IDF8bGlzdDVvcmd8"
         ];
 
-        $response = $this->curlGet($layoutUrl, $headers);
-        $data = json_decode($response, true);
+        $layoutResponse = $this->curlGet($layoutUrl, $Headers);
+        $layoutData = json_decode($layoutResponse, true);
+
+        $moduleResponse = $this->curlGet($moduleUrl, $Headers);
+        $moduleData = json_decode($moduleResponse, true);
 
         $movies = [];
 
         // Loop over modules
-        foreach ($data as $module) {
+        foreach ($moduleData as $module) {
             if (isset($module['titles'])) {
                 foreach ($module['titles'] as $title) {
                     // Optional: Check it's a movie (you could use tag, programType, or anything else)
