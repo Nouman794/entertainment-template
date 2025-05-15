@@ -11,18 +11,18 @@
     <include href="ui/header.html" />
 </header>
 
-<h2>🎬 Carousel Movies</h2>
-
 <check if="{{ @carousels }}">
     <div class="carousel-container">
         <repeat group="{{ @carousels }}" value="{{ @carousel }}">
-            <div class="carousel-wrapper {{ @carousel.title == 'HERO' ? 'hero' : 'default' }}">
-                <h2 class="carousel-title">{{ @carousel.title }}</h2>
+            <div class="carousel-wrapper {{ @carousel.title == 'Hero' ? 'layout-hero' : 'layout-default' }}">
+                <check if="{{ @carousel.title != 'Hero' }}">
+                    <h2 class="carousel-title">{{ @carousel.title }}</h2>
+                </check>
                 <div class="carousel">
                     <repeat group="{{ @carousel.items }}" value="{{ @movie }}">
                         <div class="movie-card">
                             <img src="{{ @movie.allImages.DMHE ?: array_values(@movie.allImages)[0] }}" alt="{{ @movie.title }}">
-                            <p>{{ @movie.title }}</p>
+<!--                            <p>{{ @movie.title }}</p>-->
                         </div>
                     </repeat>
                 </div>

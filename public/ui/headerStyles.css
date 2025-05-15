@@ -10,8 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 30px;
-    background-color: #111;
+    padding: 20px 30px;
     color: #fff;
 }
 
@@ -24,7 +23,8 @@
 
 /* Logo */
 .logo img {
-    height: 40px;
+    height: 35px;
+    padding-left: 25px;
 }
 
 /* Navigation Menu */
@@ -32,6 +32,7 @@
     list-style: none;
     display: flex;
     gap: 20px;
+    padding-left: 50px;
 }
 
 .main-nav a {
@@ -42,7 +43,7 @@
 }
 
 .main-nav a:hover {
-    color: #e50914;
+    color: #808080;
 }
 
 /* Right side: signup, login, search */
@@ -50,6 +51,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    padding-right: 20px;
 }
 
 .header-actions a {
@@ -57,23 +59,25 @@
     color: #fff;
     font-weight: 500;
     transition: color 0.3s;
+    padding-right: 20px;
 }
 
 .header-actions a:hover {
-    color: #e50914;
+    color: #808080;
 }
 
 .search-icon {
     background: none;
     border: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
     transition: color 0.3s;
+    padding-right: 20px;
 }
 
 .search-icon:hover {
-    color: #e50914;
+    color: #808080;
 }
 
 @media (max-width: 768px) {

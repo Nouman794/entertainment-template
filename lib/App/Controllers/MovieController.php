@@ -8,8 +8,8 @@ class MovieController
     {
         $f3->set('title', 'Movies');
 
-        $layoutUrl = 'https://lgi-dev-new-api.aws.playco.com/api/v1.2/layout/home/9c797f3612974809a6c1384575800add-lgi?origin=web-chrome&x-geo-country=IN&profileType=EV&version=2&modules=0-100';
-        $moduleUrl = 'https://lgi-dev-new-api.aws.playco.com/api/v1.2/modules/home/9c797f3612974809a6c1384575800add-lgi?origin=web-chrome&x-geo-country=IN&profileType=EV&version=2&modules=0-100';
+        $layoutUrl = 'https://lgi-new-api.aws.playco.com/api/v1.2/layout/home/9c797f3612974809a6c1384575800add-lgi?origin=web-chrome&x-geo-country=IN&profileType=EV&version=2&modules=0-100';
+        $moduleUrl = 'https://lgi-new-api.aws.playco.com/api/v1.2/modules/home/9c797f3612974809a6c1384575800add-lgi?origin=web-chrome&x-geo-country=IN&profileType=EV&version=2&modules=0-100';
 
         $headers = [
             "Authorization: Bearer spx-v1...",
@@ -21,7 +21,7 @@ class MovieController
             "x-profile-category: adult",
             "x-user-id: 9c797f3612974809a6c1384575800add-lgi",
             "x-query: ZW58MTh8REVW",
-            "x-token: SEVST3xUb3AgMjB8TGF5b3V0IG1pcnJvcmluZyB0ZXN0aW5nfExpb25zZ2F0ZSBCbG9ja2J1c3RlcnMgSGl0c3x0ZXN0IDF8bGlzdDVvcmd8"
+            "x-token: SGVyb3xUb3AgMTAgaW4gSW5kaWF8TXVzdCBXYXRjaCBOb3d8UGF0cmlvdGljIFB1bmNofEN1cmF0ZWQgZm9yIFlvdXxDb21pbmcgU29vbiBvbiBMaW9uc2dhdGUgUGxheXxXYXRjaCBOZXh0fFRlbHVndSBNb3ZpZXN8S29yZWFuIERpYXJpZXN8VGhpcyBXZWVrJ3MgUmVjb21tZW5kYXRpb25zfFRvcCAxMCBNb3ZpZXMgaW4gSW5kaWF8SGlnaCBPY3RhbmUgSGl0c3xGaXJzdCBFcGlzb2RlIEZyZWV8QmlnIEd1bnMgb2YgSG9sbHl3b29kfFBvd2VyIFBhY2tlZHxIYXMgRmFsbGVuIEZyYW5jaGlzZXxIb2xseXdvb2QgQmxvY2tidXN0ZXIgRnJhbmNoaXNlfEhvdXNlIE9mIEhvcnJvcnxUb3AgMTAgU2VyaWVzIGluIEluZGlhfENyZWF0dXJlIENocm9uaWNsZXN8U3RhciBTdHVkZGVkfER1YmJlZCBmb3IgWW91fFdvbWVuIEluIEFjdGlvbnxTdGVhbXkgJiBTZWR1Y3RpdmV8RHJhbWEgRmV2ZXJ8U3BvcnRzZmxpeHxUaHJpbGxlcnxMaW9uc2dhdGUgUGxheSBTZWxlY3Rpb258TW92aWVzIG9mIEluZGlhfA=="
         ];
 
         $layoutData = json_decode($this->curlGet($layoutUrl, $headers), true);

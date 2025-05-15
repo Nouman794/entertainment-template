@@ -10,22 +10,22 @@
 <header class="main-header">
     <div class="left-section">
         <div class="logo">
-            <img src="logo.png" alt="Logo" />
+            <img src="/images/lgiLogo.png" alt="Logo" />
         </div>
 
         <nav class="main-nav">
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Movies</a></li>
                 <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Movies</a></li>
             </ul>
         </nav>
     </div>
 
     <div class="header-actions">
-        <a href="#" class="signup">Sign Up</a>
+        <button class="search-icon">&#128269; Search</button>
         <a href="#" class="login">Login</a>
-        <button class="search-icon">&#128269;</button>
+        <a href="#" class="signup">Sign Up</a>
     </div>
 </header>
 </body>

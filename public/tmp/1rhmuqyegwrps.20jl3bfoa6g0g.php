@@ -11,18 +11,18 @@
     <?php echo $this->render('ui/header.html',NULL,get_defined_vars(),0); ?>
 </header>
 
-<h2>🎬 Carousel Movies</h2>
-
 <?php if ($carousels): ?>
     <div class="carousel-container">
         <?php foreach (($carousels?:[]) as $carousel): ?>
-            <div class="carousel-wrapper <?= ($carousel['title'] == 'HERO' ? 'hero' : 'default') ?>">
-                <h2 class="carousel-title"><?= ($carousel['title']) ?></h2>
+            <div class="carousel-wrapper <?= ($carousel['title'] == 'Hero' ? 'layout-hero' : 'layout-default') ?>">
+                <?php if ($carousel['title'] != 'Hero'): ?>
+                    <h2 class="carousel-title"><?= ($carousel['title']) ?></h2>
+                <?php endif; ?>
                 <div class="carousel">
                     <?php foreach (($carousel['items']?:[]) as $movie): ?>
                         <div class="movie-card">
                             <img src="<?= ($movie['allImages']['DMHE'] ?: array_values($movie['allImages'])[0]) ?>" alt="<?= ($movie['title']) ?>">
-                            <p><?= ($movie['title']) ?></p>
+<!--                            <p><?= ($movie['title']) ?></p>-->
                         </div>
                     <?php endforeach; ?>
                 </div>

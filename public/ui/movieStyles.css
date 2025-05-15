@@ -9,22 +9,18 @@ body {
     background-position: center;
     background-attachment: fixed;
     color: #fff; /* Use #fff if background is dark */
-
 }
 /* HERO layout */
-.carousel-wrapper.hero .movie-card img {
-    width: 800px;
-    height: 400px;
-    border: 3px solid white;
+.carousel-wrapper.layout-hero .movie-card img {
+    width: 900px;
+    height: 380px;
     border-radius: 10px;
-
 }
 
 /* Default layout */
-.carousel-wrapper.default .movie-card img {
+.carousel-wrapper.layout-default .movie-card img {
     width: 210px;
     height: 300px;
-    border: 3px solid white;
     border-radius: 15px;
     margin: 10px 0px 10px 50px;
 }
