@@ -18,6 +18,7 @@
                 <?php if ($carousel['title'] != 'Hero'): ?>
                     <h2 class="carousel-title"><?= ($carousel['title']) ?></h2>
                 <?php endif; ?>
+                <button class="carousel-btn prev-btn">&#10094;</button> <!-- prev -->
                 <div class="carousel">
                     <?php foreach (($carousel['items']?:[]) as $movie): ?>
                         <div class="movie-card">
@@ -26,6 +27,7 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
+                <button class="carousel-btn next-btn">&#10095;</button> <!-- next -->
             </div>
         <?php endforeach; ?>
     </div>

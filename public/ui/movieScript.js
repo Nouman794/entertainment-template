@@ -1,30 +1,52 @@
-const carousel = document.querySelector('.carousel');
-const items = document.querySelectorAll('.carousel-item');
-const leftArrow = document.querySelector('.arrow.left');
-const rightArrow = document.querySelector('.arrow.right');
+document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+    const carousel = wrapper.querySelector('.carousel');
+    const items = carousel.querySelectorAll('.movie-card');
+    const itemCount = items.length;
 
-if (items.length > 0) {
-    let index = 0;
-    let itemWidth = items[0].offsetWidth + 10; // item + gap
-    let visibleItems = Math.floor(document.querySelector('.carousel-container').offsetWidth / itemWidth);
-    let maxIndex = items.length - visibleItems;
+    // Clone all items and append to enable infinite scroll
+    items.forEach(item => {
+        const clone = item.cloneNode(true);
+        carousel.appendChild(clone);
+    });
 
-    function updateCarousel() {
-        carousel.style.transform = `translateX(-${index * itemWidth}px)`;
+    const totalItems = itemCount * 2; // original + clone count
+    const itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(items[0]).marginRight) || 0;
+
+    let index = 0; // current item index
+    const delay = 4000; // ms to pause on each item
+
+    function scrollToIndex(i) {
+        // Scroll smoothly to item i
+        carousel.scrollTo({
+            left: i * itemWidth,
+            behavior: 'smooth'
+        });
     }
 
-    leftArrow.addEventListener('click', () => {
-        index = Math.max(index - 1, 0);
-        updateCarousel();
+    function step() {
+        index++;
+        // If reached the cloned items, reset scrollLeft and index seamlessly
+        if (index >= itemCount) {
+            carousel.scrollLeft = 0;
+            index = 0;
+        }
+
+        scrollToIndex(index);
+
+        setTimeout(step, delay);
+    }
+
+    // Start the carousel
+    step();
+
+    // Optional: pause on hover
+    let timeoutId;
+    wrapper.addEventListener('mouseenter', () => {
+        clearTimeout(timeoutId);
     });
 
-    rightArrow.addEventListener('click', () => {
-        index = Math.min(index + 1, maxIndex);
-        updateCarousel();
+    wrapper.addEventListener('mouseleave', () => {
+        timeoutId = setTimeout(step, delay);
     });
-
-    setInterval(() => {
-        index = (index + 1) > maxIndex ? 0 : index + 1;
-        updateCarousel();
-    }, 2000);
-}
+});
+//nouman

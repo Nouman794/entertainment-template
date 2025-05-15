@@ -1,7 +1,3 @@
-/*body {*/
-/*    background-color: #004050;*/
-/*    color: #ffffff;*/
-/*}*/
 body {
     background-image: url('/images/background.png');
     background-size: cover;
@@ -36,11 +32,44 @@ body {
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 10px;
+}
 
-
+.carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .carousel-title {
     margin: 10px 0px 10px 60px;
     font-size: 1.4rem;
+}
+.carousel-wrapper {
+    position: relative;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
 }

@@ -18,6 +18,7 @@
                 <check if="{{ @carousel.title != 'Hero' }}">
                     <h2 class="carousel-title">{{ @carousel.title }}</h2>
                 </check>
+                <button class="carousel-btn prev-btn">&#10094;</button> <!-- prev -->
                 <div class="carousel">
                     <repeat group="{{ @carousel.items }}" value="{{ @movie }}">
                         <div class="movie-card">
@@ -26,6 +27,7 @@
                         </div>
                     </repeat>
                 </div>
+                <button class="carousel-btn next-btn">&#10095;</button> <!-- next -->
             </div>
         </repeat>
     </div>
