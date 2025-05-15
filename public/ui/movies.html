@@ -16,8 +16,7 @@
 <check if="{{ @carousels }}">
     <div class="carousel-container">
         <repeat group="{{ @carousels }}" value="{{ @carousel }}">
-            <!-- Each carousel in its own wrapper -->
-            <section class="carousel-wrapper">
+            <div class="carousel-wrapper {{ @carousel.title == 'HERO' ? 'hero' : 'default' }}">
                 <h2 class="carousel-title">{{ @carousel.title }}</h2>
                 <div class="carousel">
                     <repeat group="{{ @carousel.items }}" value="{{ @movie }}">
@@ -27,12 +26,8 @@
                         </div>
                     </repeat>
                 </div>
-            </section>
+            </div>
         </repeat>
-
-        <!-- Left and Right Arrow Controls (if needed) -->
-        <button class="arrow left">&#10094;</button>
-        <button class="arrow right">&#10095;</button>
     </div>
 </check>
 

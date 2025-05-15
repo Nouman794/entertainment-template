@@ -16,8 +16,7 @@
 <?php if ($carousels): ?>
     <div class="carousel-container">
         <?php foreach (($carousels?:[]) as $carousel): ?>
-            <!-- Each carousel in its own wrapper -->
-            <section class="carousel-wrapper">
+            <div class="carousel-wrapper <?= ($carousel['title'] == 'HERO' ? 'hero' : 'default') ?>">
                 <h2 class="carousel-title"><?= ($carousel['title']) ?></h2>
                 <div class="carousel">
                     <?php foreach (($carousel['items']?:[]) as $movie): ?>
@@ -27,12 +26,8 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-            </section>
+            </div>
         <?php endforeach; ?>
-
-        <!-- Left and Right Arrow Controls (if needed) -->
-        <button class="arrow left">&#10094;</button>
-        <button class="arrow right">&#10095;</button>
     </div>
 <?php endif; ?>
 
