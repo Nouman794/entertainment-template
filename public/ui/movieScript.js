@@ -1,52 +1,49 @@
-document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
-    const carousel = wrapper.querySelector('.carousel');
-    const items = carousel.querySelectorAll('.movie-card');
-    const itemCount = items.length;
+document.addEventListener("DOMContentLoaded", () => {
+    const carousels = document.querySelectorAll('.carousel-wrapper');
 
-    // Clone all items and append to enable infinite scroll
-    items.forEach(item => {
-        const clone = item.cloneNode(true);
-        carousel.appendChild(clone);
-    });
+    carousels.forEach((wrapper, index) => {
+        const carousel = wrapper.querySelector('.carousel');
+        const prevBtn = wrapper.querySelector('.prev-btn');
+        const nextBtn = wrapper.querySelector('.next-btn');
+        const item = carousel.querySelector('.movie-card');
 
-    const totalItems = itemCount * 2; // original + clone count
-    const itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(items[0]).marginRight) || 0;
+        if (!carousel || !item) return;
 
-    let index = 0; // current item index
-    const delay = 4000; // ms to pause on each item
+        const itemWidth = item.offsetWidth + 20;
 
-    function scrollToIndex(i) {
-        // Scroll smoothly to item i
-        carousel.scrollTo({
-            left: i * itemWidth,
-            behavior: 'smooth'
+        // Function to append cloned items when reaching the end
+        const maybeCloneItems = () => {
+            if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth - itemWidth) {
+                const items = carousel.querySelectorAll('.movie-card');
+                items.forEach(cloneItem => {
+                    const newItem = cloneItem.cloneNode(true);
+                    carousel.appendChild(newItem);
+                });
+            }
+        };
+
+        prevBtn.addEventListener("click", () => {
+            carousel.scrollBy({ left: -itemWidth, behavior: 'smooth' });
         });
-    }
 
-    function step() {
-        index++;
-        // If reached the cloned items, reset scrollLeft and index seamlessly
-        if (index >= itemCount) {
-            carousel.scrollLeft = 0;
-            index = 0;
+        nextBtn.addEventListener("click", () => {
+            carousel.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            maybeCloneItems();
+        });
+
+        if (index === 0) {
+            let autoScroll = setInterval(() => {
+                carousel.scrollBy({ left: itemWidth, behavior: 'smooth' });
+                maybeCloneItems();
+            }, 3000);
+
+            wrapper.addEventListener("mouseenter", () => clearInterval(autoScroll));
+            wrapper.addEventListener("mouseleave", () => {
+                autoScroll = setInterval(() => {
+                    carousel.scrollBy({ left: itemWidth, behavior: 'smooth' });
+                    maybeCloneItems();
+                }, 3000);
+            });
         }
-
-        scrollToIndex(index);
-
-        setTimeout(step, delay);
-    }
-
-    // Start the carousel
-    step();
-
-    // Optional: pause on hover
-    let timeoutId;
-    wrapper.addEventListener('mouseenter', () => {
-        clearTimeout(timeoutId);
-    });
-
-    wrapper.addEventListener('mouseleave', () => {
-        timeoutId = setTimeout(step, delay);
     });
 });
-//nouman

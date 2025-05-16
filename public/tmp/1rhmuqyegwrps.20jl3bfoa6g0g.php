@@ -14,22 +14,42 @@
 <?php if ($carousels): ?>
     <div class="carousel-container">
         <?php foreach (($carousels?:[]) as $carousel): ?>
-            <div class="carousel-wrapper <?= ($carousel['title'] == 'Hero' ? 'layout-hero' : 'layout-default') ?>">
+            <div class="carousel-wrapper carousel-wrapper-layout-<?= ($carousel['category']) ?>">
                 <?php if ($carousel['title'] != 'Hero'): ?>
                     <h2 class="carousel-title"><?= ($carousel['title']) ?></h2>
                 <?php endif; ?>
-                <button class="carousel-btn prev-btn">&#10094;</button> <!-- prev -->
+
+                <button class="carousel-btn prev-btn">&#10094;</button>
                 <div class="carousel">
                     <?php foreach (($carousel['items']?:[]) as $movie): ?>
                         <div class="movie-card">
                             <img src="<?= ($movie['allImages']['DMHE'] ?: array_values($movie['allImages'])[0]) ?>" alt="<?= ($movie['title']) ?>">
-<!--                            <p><?= ($movie['title']) ?></p>-->
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <button class="carousel-btn next-btn">&#10095;</button> <!-- next -->
+                <button class="carousel-btn next-btn">&#10095;</button>
             </div>
         <?php endforeach; ?>
+
+        <!--        <?php foreach (($carousels?:[]) as $carousel): ?>-->
+<!--            <div class="carousel-wrapper">-->
+<!--                <div class="carousel-wrapper-layout-<?= ($carousel['category']) ?>">-->
+<!--                <?php if ($carousel['title'] != 'Hero'): ?>-->
+<!--                        <h2 class="carousel-title"><?= ($carousel['title']) ?></h2>-->
+<!--                <?php endif; ?>-->
+<!--                    <button class="carousel-btn prev-btn">&#10094;</button> &lt;!&ndash; prev &ndash;&gt;-->
+<!--                    <div class="carousel">-->
+<!--                        <?php foreach (($carousel['items']?:[]) as $movie): ?>-->
+<!--                            <div class="movie-card">-->
+<!--                                <img src="<?= ($movie['allImages']['DMHE'] ?: array_values($movie['allImages'])[0]) ?>" alt="<?= ($movie['title']) ?>">-->
+<!--    &lt;!&ndash;                            <p><?= ($movie['title']) ?></p>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        <?php endforeach; ?>-->
+<!--                    </div>-->
+<!--                    <button class="carousel-btn next-btn">&#10095;</button> &lt;!&ndash; next &ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        <?php endforeach; ?>-->
     </div>
 <?php endif; ?>
 

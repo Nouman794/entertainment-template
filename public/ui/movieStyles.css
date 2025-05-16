@@ -7,18 +7,35 @@ body {
     color: #fff; /* Use #fff if background is dark */
 }
 /* HERO layout */
-.carousel-wrapper.layout-hero .movie-card img {
+.carousel-wrapper-layout-Hero .movie-card img {
     width: 900px;
     height: 380px;
     border-radius: 10px;
 }
 
-/* Default layout */
-.carousel-wrapper.layout-default .movie-card img {
+/* Other layout */
+.carousel-wrapper-layout-List5TopW .movie-card img {
     width: 210px;
     height: 300px;
     border-radius: 15px;
     margin: 10px 0px 10px 50px;
+}
+
+/* Default layout */
+.carousel-wrapper-layout-List5Items .movie-card img {
+    width: 210px;
+    height: 300px;
+    border-radius: 15px;
+    margin: 10px 0px 10px 50px;
+}
+
+/* Default layout */
+.carousel-wrapper-layout-List5Org .movie-card img {
+    width: 580px;
+    height: 330px;
+    border-radius: 10px;
+    margin: 10px 0px 10px 50px;
+
 }
 
 /* Common styles */
@@ -67,9 +84,9 @@ body {
 }
 
 .prev-btn {
-    left: 10px;
+    left: 80px;
 }
 
 .next-btn {
-    right: 10px;
+    right: 80px;
 }

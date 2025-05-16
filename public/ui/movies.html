@@ -14,22 +14,42 @@
 <check if="{{ @carousels }}">
     <div class="carousel-container">
         <repeat group="{{ @carousels }}" value="{{ @carousel }}">
-            <div class="carousel-wrapper {{ @carousel.title == 'Hero' ? 'layout-hero' : 'layout-default' }}">
+            <div class="carousel-wrapper carousel-wrapper-layout-{{ @carousel.category }}">
                 <check if="{{ @carousel.title != 'Hero' }}">
                     <h2 class="carousel-title">{{ @carousel.title }}</h2>
                 </check>
-                <button class="carousel-btn prev-btn">&#10094;</button> <!-- prev -->
+
+                <button class="carousel-btn prev-btn">&#10094;</button>
                 <div class="carousel">
                     <repeat group="{{ @carousel.items }}" value="{{ @movie }}">
                         <div class="movie-card">
                             <img src="{{ @movie.allImages.DMHE ?: array_values(@movie.allImages)[0] }}" alt="{{ @movie.title }}">
-<!--                            <p>{{ @movie.title }}</p>-->
                         </div>
                     </repeat>
                 </div>
-                <button class="carousel-btn next-btn">&#10095;</button> <!-- next -->
+                <button class="carousel-btn next-btn">&#10095;</button>
             </div>
         </repeat>
+
+        <!--        <repeat group="{{ @carousels }}" value="{{ @carousel }}">-->
+<!--            <div class="carousel-wrapper">-->
+<!--                <div class="carousel-wrapper-layout-{{ @carousel.category }}">-->
+<!--                <check if="{{ @carousel.title != 'Hero' }}">-->
+<!--                        <h2 class="carousel-title">{{ @carousel.title }}</h2>-->
+<!--                </check>-->
+<!--                    <button class="carousel-btn prev-btn">&#10094;</button> &lt;!&ndash; prev &ndash;&gt;-->
+<!--                    <div class="carousel">-->
+<!--                        <repeat group="{{ @carousel.items }}" value="{{ @movie }}">-->
+<!--                            <div class="movie-card">-->
+<!--                                <img src="{{ @movie.allImages.DMHE ?: array_values(@movie.allImages)[0] }}" alt="{{ @movie.title }}">-->
+<!--    &lt;!&ndash;                            <p>{{ @movie.title }}</p>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </repeat>-->
+<!--                    </div>-->
+<!--                    <button class="carousel-btn next-btn">&#10095;</button> &lt;!&ndash; next &ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </repeat>-->
     </div>
 </check>
 
