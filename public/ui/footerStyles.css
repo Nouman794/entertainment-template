@@ -26,6 +26,7 @@ footer {
     text-decoration: none;
     color: #fff;
     transition: color 0.3s;
+    padding: 10px;
 }
 
 .footer-links a:hover {
@@ -44,10 +45,14 @@ footer .copyright {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    padding-top: 5px;
 }
 
-.social-icons a,
+.social-icons a {
+    padding-right: 10px;
+}
 .store-buttons a {
+padding-right: 10px;
 }
 
 .social-icons img{
@@ -60,7 +65,7 @@ footer .copyright {
     height: 30px;
     width: auto;
     transition: opacity 0.3s;
-    border-color: white;
+    border: 1px solid white;
 }
 
 .social-icons img:hover,
@@ -75,6 +80,7 @@ footer .copyright {
     }
 
     .footer-bottom {
+
         flex-direction: column;
         align-items: flex-start;
     }
