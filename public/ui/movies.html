@@ -16,9 +16,13 @@
         <repeat group="{{ @carousels }}" value="{{ @carousel }}">
             <div class="carousel-wrapper carousel-wrapper-layout-{{ @carousel.category }}">
                 <check if="{{ @carousel.title != 'Hero' }}">
-                    <h2 class="carousel-title">{{ @carousel.title }}</h2>
+                    <div class="carousel-heading">
+                        <h2 class="carousel-title">{{ @carousel.title }}</h2>
+                        <check if="{{ @carousel.cta }}">
+                            <a href="#" class="view-all-link">View ALL &gt;</a>
+                        </check>
+                    </div>
                 </check>
-
                 <button class="carousel-btn prev-btn">&#10094;</button>
                 <div class="carousel">
                     <repeat group="{{ @carousel.items }}" value="{{ @movie }}">

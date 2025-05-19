@@ -16,9 +16,13 @@
         <?php foreach (($carousels?:[]) as $carousel): ?>
             <div class="carousel-wrapper carousel-wrapper-layout-<?= ($carousel['category']) ?>">
                 <?php if ($carousel['title'] != 'Hero'): ?>
-                    <h2 class="carousel-title"><?= ($carousel['title']) ?></h2>
+                    <div class="carousel-heading">
+                        <h2 class="carousel-title"><?= ($carousel['title']) ?></h2>
+                        <?php if ($carousel['cta']): ?>
+                            <a href="#" class="view-all-link">View ALL &gt;</a>
+                        <?php endif; ?>
+                    </div>
                 <?php endif; ?>
-
                 <button class="carousel-btn prev-btn">&#10094;</button>
                 <div class="carousel">
                     <?php foreach (($carousel['items']?:[]) as $movie): ?>

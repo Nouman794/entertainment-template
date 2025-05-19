@@ -46,6 +46,9 @@ class MovieController
             $layoutOrder = $layoutModule['layoutOrder'] ?? 0;
             $type = $layoutModule['type'] ?? '';
             $category = $layoutModule['category'] ?? '';
+            $cta = $layoutModule['cta'] ?? null; // <- Check if this exists
+
+
 
             $items = [];
 
@@ -100,6 +103,7 @@ class MovieController
                     'type' => $type,
                     'category' => $category,
                     'items' => $items,
+                    'cta' => $cta, // <-- pass to template
                 ];
             }
         }
@@ -112,7 +116,7 @@ class MovieController
         $f3->set('carousels', $carousels);
 
 //        echo '<pre>';
-//        print_r($carousels[0]['items'][0]);
+//        print_r($layoutModules);
 //        exit;
         echo \Template::instance()->render('ui/movies.html');
     }

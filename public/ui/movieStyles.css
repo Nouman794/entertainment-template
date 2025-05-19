@@ -6,6 +6,9 @@ body {
     background-attachment: fixed;
     color: #fff; /* Use #fff if background is dark */
 }
+.carousel-container{
+    margin-bottom: 150px;
+}
 /* HERO layout */
 .carousel-wrapper-layout-Hero .movie-card img {
     width: 900px;
@@ -18,7 +21,7 @@ body {
     width: 210px;
     height: 300px;
     border-radius: 15px;
-    margin: 10px 0px 10px 50px;
+    /*margin: 10px 0px 10px 1px;*/
 }
 
 /* Default layout */
@@ -26,7 +29,7 @@ body {
     width: 210px;
     height: 300px;
     border-radius: 15px;
-    margin: 10px 0px 10px 50px;
+    /*margin: 10px 0px 10px 1px;*/
 }
 
 /* Default layout */
@@ -34,7 +37,7 @@ body {
     width: 580px;
     height: 330px;
     border-radius: 10px;
-    margin: 10px 0px 10px 50px;
+    /*margin: 0px 0px 10px 1px;*/
 
 }
 
@@ -49,10 +52,26 @@ body {
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 10px;
+    margin-left: 50px;
 }
 
 .carousel::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
+}
+.carousel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-right: 30px;
+}
+
+.view-all-link {
+    color: yellow;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 750;
+    padding-right: 30px;
 }
 
 .carousel-title {
@@ -62,8 +81,12 @@ body {
 .carousel-wrapper {
     position: relative;
 }
+.carousel-container {
+    position: relative;
+}
 
 .carousel-btn {
+    display: none;
     position: absolute;
     top: 50%;
     background-color: rgba(0,0,0,0.5);
@@ -81,6 +104,10 @@ body {
 
 .carousel-btn:hover {
     background-color: rgba(0,0,0,0.8);
+}
+
+.carousel-container:hover .carousel-btn {
+    display: block;
 }
 
 .prev-btn {
