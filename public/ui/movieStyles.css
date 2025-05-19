@@ -11,8 +11,8 @@ body {
     padding-top: 80px;
 }
 /* HERO layout */
-.carousel-wrapper-layout-Hero .movie-card img {
-    width: 900px;
+.carousel-wrapper-layout-Hero .movie-card-hero img {
+    width: 800px;
     height: 380px;
     border-radius: 10px;
 }
@@ -39,20 +39,130 @@ body {
 }
 
 /* Common styles */
+.movie-card-hero {
+    display: inline-block;
+    /*text-align: center;*/
+    position: relative;
+}
+
+.movie-image-wrapper-hero {
+    position: relative;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 0;
+    /*overflow: hidden;*/
+
+    /* ✅ Reserve space for border */
+    border: 3px solid transparent;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.movie-image-wrapper-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    transition: border 0.3s ease;
+}
+
+/* ✅ Hover effect without layout shift */
+.movie-card-hero:hover .movie-image-wrapper-hero {
+    /*transform: scale(1.05);*/
+    border-color: yellow;
+}
+/*upto here*/
+
 .movie-card {
     display: inline-block;
     margin: 0 10px;
     text-align: center;
+    position: relative;
+}
+
+.movie-image-wrapper {
+    position: relative;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 0;
+    overflow: hidden;
+
+    /* ✅ Reserve space for border */
+    border: 3px solid transparent;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.movie-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    transition: border 0.3s ease;
+}
+
+/* ✅ Hover effect without layout shift */
+.movie-card:hover .movie-image-wrapper {
+    transform: scale(1.05);
+    border-color: yellow;
+}
+
+/* Play button initially hidden */
+.play-button-hero {
+    position: absolute;
+    top: 90%;
+    right: 2%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: yellow;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    background: none;
+    border: none;
+}
+
+.play-button-all {
+    position: absolute;
+    top: 85%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: yellow;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    background: none;
+    border: none;
+}
+
+/* Show button on hover */
+.movie-card-hero:hover .play-button-hero {
+    opacity: 1;
+}
+.movie-card:hover .play-button-all {
+    opacity: 1;
 }
 
 .carousel {
     overflow-x: auto;
     white-space: nowrap;
+    padding-top: 10px;
     padding-bottom: 10px;
     margin-left: 50px;
 }
 
-.carousel::-webkit-scrollbar {
+.carousel-hero {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.carousel::-webkit-scrollbar,
+.carousel-hero::-webkit-scrollbar{
     display: none; /* Chrome, Safari, Opera */
 }
 .carousel-heading {
