@@ -8,6 +8,7 @@ body {
 }
 .carousel-container{
     margin-bottom: 150px;
+    padding-top: 80px;
 }
 /* HERO layout */
 .carousel-wrapper-layout-Hero .movie-card img {
@@ -81,11 +82,8 @@ body {
 .carousel-wrapper {
     position: relative;
 }
-.carousel-container {
-    position: relative;
-}
 
-.carousel-btn {
+.carousel-wrapper .carousel-btn {
     display: none;
     position: absolute;
     top: 50%;
@@ -102,18 +100,19 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.carousel-btn:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-.carousel-container:hover .carousel-btn {
+/* ✅ Only show buttons when hovering over the current carousel-wrapper */
+.carousel-wrapper:hover .carousel-btn {
     display: block;
 }
 
-.prev-btn {
+.carousel-wrapper .carousel-btn:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.carousel-btn.prev-btn {
     left: 80px;
 }
 
-.next-btn {
+.carousel-btn.next-btn {
     right: 80px;
 }

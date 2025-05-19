@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #004050;
 }
 
 /* Header Wrapper */
@@ -11,7 +12,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 30px;
-    color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    opacity: 90%;
 }
 
 /* Left side: logo + menu */
