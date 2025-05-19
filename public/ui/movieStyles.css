@@ -22,7 +22,6 @@ body {
     width: 210px;
     height: 300px;
     border-radius: 15px;
-    /*margin: 10px 0px 10px 1px;*/
 }
 
 /* Default layout */
@@ -30,7 +29,6 @@ body {
     width: 210px;
     height: 300px;
     border-radius: 15px;
-    /*margin: 10px 0px 10px 1px;*/
 }
 
 /* Default layout */
@@ -38,8 +36,6 @@ body {
     width: 580px;
     height: 330px;
     border-radius: 10px;
-    /*margin: 0px 0px 10px 1px;*/
-
 }
 
 /* Common styles */
@@ -87,10 +83,10 @@ body {
     display: none;
     position: absolute;
     top: 50%;
-    background-color: rgba(0,0,0,0.5);
-    border: none;
+    background-color: #004050;
+    border: 1px solid white;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 50%;
@@ -106,7 +102,7 @@ body {
 }
 
 .carousel-wrapper .carousel-btn:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,1);
 }
 
 .carousel-btn.prev-btn {
