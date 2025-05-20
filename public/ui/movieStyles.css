@@ -7,7 +7,7 @@ body {
     color: #fff; /* Use #fff if background is dark */
 }
 .carousel-container{
-    margin-bottom: 150px;
+    /*margin-bottom: 150px;*/
     padding-top: 80px;
 }
 /* HERO layout */

@@ -10,14 +10,18 @@ footer {
     font-family: Arial, sans-serif;
     font-size: 16px;
     color: #fff;
-    padding: 12px 10px 12px 30px;
+    /*padding: 12px 10px 12px 30px;*/
+}
+.footer-links{
+    padding-top: 120px;
 }
 
 /* Footer Links (Movie Time and Help Center) */
 .footer-links p {
     line-height: 1.6;
     color: #fff;
-    padding: 5px;
+    padding-left: 60px;
+    padding-bottom: 5px;
 }
 
 .footer-links a {
@@ -35,7 +39,9 @@ footer {
 footer .copyright {
     color: #b5b5b5;
     text-align: left;
-    padding: 5px;
+    padding-left: 60px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 /* Bottom Row (Social & Store) */
@@ -44,6 +50,8 @@ footer .copyright {
     flex-wrap: wrap;
     gap: 20px;
     padding-top: 5px;
+    padding-left: 50px;
+    padding-bottom: 20px;
 }
 
 .footer-bottom .social-icons img{
