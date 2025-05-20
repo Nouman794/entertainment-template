@@ -7,8 +7,7 @@
 <body>
 <footer>
     <div class="footer-links">
-        <p>
-            <strong>Movie Time?</strong>
+        <p><strong>Movie Time?</strong>
             <a href="#">Action</a> |
             <a href="#">Comedy</a> |
             <a href="#">Drama</a> |
@@ -18,8 +17,7 @@
             <a href="#">Romance</a> |
             <a href="#">Fantasy</a>
         </p>
-        <p>
-            <strong>Help Center</strong>
+        <p><strong>Help Center?</strong>
             <a href="#">Contact Us</a> |
             <a href="#">T&Cs</a> |
             <a href="#">Privacy Policy</a> |
