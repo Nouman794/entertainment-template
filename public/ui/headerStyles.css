@@ -161,11 +161,20 @@ body {
 }
 
 /* Mobile only */
-@media (max-width: 768px) {
+/* Default: show desktop header, hide mobile header */
+.desktop-only {
+    display: flex;
+}
+
+.mobile-header {
+    display: none;
+}
+
+/* Show hamburger menu for tablets and small laptops up to 1368px wide */
+@media (max-width: 1368px) {
     .desktop-only {
         display: none;
     }
-
     .mobile-header {
         display: flex;
     }
