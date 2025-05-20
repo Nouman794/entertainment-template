@@ -10,13 +10,15 @@ footer {
     font-family: Arial, sans-serif;
     font-size: 16px;
     color: #fff;
-    /*padding: 12px 10px 12px 30px;*/
 }
 .footer-links{
     padding-top: 120px;
 }
 
 /* Footer Links (Movie Time and Help Center) */
+.footer-links strong {
+    padding-right: 10px;
+}
 .footer-links p {
     line-height: 1.6;
     color: #fff;
@@ -28,7 +30,13 @@ footer {
     text-decoration: none;
     color: #fff;
     transition: color 0.3s;
-    padding: 10px;
+    /*padding: 10px;*/
+}
+.footer-links p a:not(:last-child)::after {
+    content: "|";
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .footer-links a:hover {
@@ -61,7 +69,6 @@ footer .copyright {
 .footer-bottom .store-buttons img {
     width: auto; /* increase width */
     height: 40px;
-    /*height: 100px; !* maintain aspect ratio *!*/
 }
 
 .social-icons a {
@@ -78,8 +85,6 @@ padding-right: 10px;
 }
 
 .store-buttons img {
-    /*height: 30px;*/
-    /*width: auto;*/
     transition: opacity 0.3s;
     border: 1px solid white;
     border-radius: 5px;
@@ -108,35 +113,25 @@ padding-right: 10px;
         font-size: 14px;
         margin-bottom: 5px;
     }
-    .footer-links strong {
-        /*padding-left: 6px;*/
-        display: inline-block;
-        padding: 5px 8px;
-    }
 
-    .footer-links a {
-        display: inline-block;
-        padding: 5px 8px;
+    .footer-links p a:not(:last-child)::after {
+        content: "|";
+        white-space: nowrap;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     footer .copyright {
-        /*text-align: center;*/
-        padding-left: 0;
+        padding-left: 10px;
         padding-right: 0;
         font-size: 12px;
     }
 
     .footer-bottom {
         flex-direction: column;
-        /*align-items: center;*/
-        padding-left: 0;
+        padding-left: 10px;
         padding-right: 0;
         gap: 10px;
-    }
-
-    .social-icons a,
-    .store-buttons a {
-        padding-right: 5px;
     }
 
     .social-icons img,

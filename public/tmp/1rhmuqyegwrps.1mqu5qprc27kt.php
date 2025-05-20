@@ -8,21 +8,21 @@
 <footer>
     <div class="footer-links">
         <p><strong>Movie Time?</strong>
-            <a href="#">Action</a> |
-            <a href="#">Comedy</a> |
-            <a href="#">Drama</a> |
-            <a href="#">Horror</a> |
-            <a href="#">Thriller</a> |
-            <a href="#">Family</a> |
-            <a href="#">Romance</a> |
+            <a href="#">Action</a>
+            <a href="#">Comedy</a>
+            <a href="#">Drama</a>
+            <a href="#">Horror</a>
+            <a href="#">Thriller</a>
+            <a href="#">Family</a>
+            <a href="#">Romance</a>
             <a href="#">Fantasy</a>
         </p>
         <p><strong>Help Center?</strong>
-            <a href="#">Contact Us</a> |
-            <a href="#">T&Cs</a> |
-            <a href="#">Privacy Policy</a> |
-            <a href="#">About Us</a> |
-            <a href="#">Account Deletion</a> |
+            <a href="#">Contact Us</a>
+            <a href="#">T&Cs</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">About Us</a>
+            <a href="#">Account Deletion</a>
             <a href="#">Content Grievances</a>
         </p>
     </div>
